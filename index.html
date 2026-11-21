@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusMart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo"><strong>CampusMart</strong></a>
+
+        <nav aria-label="Main">
+            <ul class="nav-links">
+                <li><a href="index.html" class="browse">Browse</a></li>
+                <li><a href="sell.html" class="sell">Sell an item</a></li>
+                <li><a href="about.html" class="about">About</a></li>
+            </ul>
+        </nav>
+         <button id="theme-toggle" type="button">
+          🌙
+         </button>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h1>Buy &amp; sell on campus</h1>
+            <p>
+                Textbooks, calculators, furniture and more —
+                from students, for students.
+            </p>
+            <a href="sell.html" class="startsell">Start selling</a>
+        </section>
+
+        <section class="container" aria-labelledby="latest-heading">
+
+            <div class="toolbar">
+                <h2 id="latest-heading">Latest listings</h2>
+                <p>❤️ Saved: <span id="fav-count">0</span></p>
+            </div>
+            
+            <label for="search">Search listings</label>
+            <input id="search" type="search" placeholder="Try book or calculator">
+            
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="All">All</option>
+                <option value="Books">Books</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Stationery">Stationery</option>
+            </select>
+
+            <label for="sort">Sort by</label>
+            <select id="sort">
+                <option value="newest">Newest</option>
+                <option value="low-high">Price: low to high</option>
+                <option value="high-low">Price: high to low</option>
+            </select>
+
+            <p id="result-count"></p>
+
+            <div class="listing-grid" id="listing-grid"></div>
+
+            <p id="empty-message" hidden>
+                    No listings match your search.
+                </p>
+
+                <p id="saved-total">
+                        Total value of saved items: Rs 0
+                    </p>
+        </section>
+
+        <section class="container">
+            <h2>How it works</h2>
+            <ol>
+                <li>Create a free account with your university email.</li>
+                <li>Post a photo, price and description.</li>
+                <li>Meet the buyer safely on campus.</li>
+            </ol>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; 2026 CampusMart ·
+            <a href="mailto:help@campusmart.pk">help@campusmart.pk</a>
+        </p>
+    </footer>
+
+</body>
+</html>

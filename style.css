@@ -1,0 +1,382 @@
+
+/* css reset, Default browser spacing remove hoti hai aur images apne container ke andar properly fit hoti hain.*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* css variables*/
+
+:root {
+    --color-bg: #ffffff;
+    --color-text: #0f172a;
+    --color-muted: #64748b;
+    --color-border: #e2e8f0;
+    --color-primary: #4f46e5;
+    --radius: 12px;
+}
+
+/* dark mode  
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #0b1120;
+        --color-text: #e2e8f0;
+        --color-muted: #94a3b8;
+        --color-border: #1f2937;
+    }
+} */
+
+/* dark theme by java */ 
+[data-theme="dark"] {
+    --color-bg: #0b1120;
+    --color-text: #e2e8f0;
+    --color-muted: #94a3b8;
+    --color-border: #1f2937;
+}
+
+/* general styling, Website ka font, text spacing, link colors aur headings/paragraphs ki spacing consistent hoti hai.*/
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* header and flexbox*/
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+/* buttons for browse, sell and about*/
+
+.browse {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.sell {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.about {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+/*start selling ke button o different style kia thake uss ka box prominent ho sake */
+.startsell {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #3f38bd;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.startsell:hover {
+    background: #3730a3;
+    text-decoration: none;
+}
+/* changes color when these buttons are hovered*/
+.browse:hover {
+    background: #3730a3;
+    text-decoration: none;
+}
+
+.sell:hover {
+    background: #3730a3;
+    text-decoration: none;
+}
+
+.about:hover {
+    background: #3730a3;
+    text-decoration: none;
+}
+/*submit button in sell */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #3730a3;
+    text-decoration: none;
+}
+
+/* hero section, deals with h1 of buy & sell*/
+
+.hero {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin: 1.5rem;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border-radius: var(--radius);
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.1;
+}
+
+/* container, latest heading */
+
+.container,
+.page-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/*grid for 2 items displayed */
+
+.listing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2.5rem;
+}
+
+/* card for images in grid */
+
+.card {
+    position: relative;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--color-bg);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.725);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+/*transparent written conditions of items */
+.meta {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+/* sell form*/
+
+.sell-form {
+    max-width: 500px;
+    margin-top: 1.5rem;
+}
+
+.sell-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.sell-form input,
+.sell-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font: inherit;
+}
+/*selects only description form area  */
+.sell-form textarea {
+    min-height: 120px;
+    resize: vertical; /*allows resizing */
+}
+/*when area is focused or being filled */
+.sell-form input:focus-visible,
+.sell-form textarea:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.sell-form button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+/* back to home navigation*/
+
+.back-nav {
+    padding: 1rem 1.5rem;
+}
+
+/*footer*/
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    margin-top: 2rem;
+    color: var(--color-muted);
+}
+
+/* responsive design, fix length according to device */
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 5rem 2rem;
+    }
+
+    .sell-form {
+        max-width: 600px;
+    }
+}
+/*for mobiles */
+@media (max-width: 480px) {
+    .site-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        margin: 1rem;
+        padding: 2rem 1rem;
+    }
+}
+
+/* reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
+
+/* JAVA */
+/* Toolbar */
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Search and filters */
+
+#search,
+#category,
+#sort {
+    padding: 0.7rem;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Favourite button */
+
+.fav-btn {
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--color-primary);
+    color: white;
+    cursor: pointer;
+}
+
+/* Theme button */
+
+#theme-toggle {
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Empty message */
+
+#empty-message {
+    color: var(--color-muted);
+    margin-top: 1rem;
+}
